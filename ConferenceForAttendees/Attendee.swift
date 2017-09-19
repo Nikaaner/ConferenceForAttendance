@@ -19,7 +19,31 @@ struct Attendee: Mappable {
     var lastName: String?
     var country: String?
     var email: String?
-    var availableDates: [String]?
+    
+    var suitableDates: [Date]? {
+        guard let availableUnicalDates = availableUnicalDates else { return nil }
+        var suitableDates: [Date] = []
+        for index in 0..<availableUnicalDates.count {
+            guard index < availableUnicalDates.count - 1 else { break }
+            let date = availableUnicalDates[index]
+            let nextDate = availableUnicalDates[index + 1]
+            
+            let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+            let nextDay = calendar.date(byAdding: .day, value: 1, to: date, options: [])!
+            
+            if nextDay == nextDate {
+                suitableDates.append(nextDate)
+            }
+        }
+        return suitableDates.isEmpty ? nil : suitableDates
+    }
+    
+    private var availableDates: [Date]?
+    
+    private var availableUnicalDates: [Date]? {
+        guard let availableDates = availableDates else { return nil }
+        return Set(availableDates).sorted()
+    }    
     
     // MARK: - Mappable
     
@@ -30,7 +54,10 @@ struct Attendee: Mappable {
         lastName <- map["lastName"]
         country <- map["country"]
         email <- map["email"]
-        availableDates <- map["availableDates"]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        availableDates <- (map["availableDates"], DateFormatterTransform(dateFormatter: dateFormatter))
     }
     
 }

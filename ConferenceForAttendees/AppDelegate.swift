@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Attendee.attendees { (attendees) in
-            print(attendees)
+            attendees?.forEach {
+                print("\($0.firstName) \($0.lastName) \($0.suitableDates)")
+            }
         }
         
         return true
