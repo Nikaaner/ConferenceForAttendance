@@ -13,15 +13,18 @@ struct Conference: Mappable {
     
     // MARK: - Properties
     
-    var country: Country?
+    var countryName: String?
     var startingDate: Date?
     var emails: [String]?
+    
+    fileprivate var country: Country?
     
     // MARK: - Lifecycle
     
     init(country: Country) {
         self.country = country
         
+        countryName = country.name
         let theBestDate = calculateStartingDate()
         startingDate = theBestDate?.0
         emails = theBestDate?.1.flatMap { $0.email }
@@ -32,7 +35,7 @@ struct Conference: Mappable {
     init?(map: Map) {}
     
     mutating func mapping(map: Map) {
-        country <- map["country"]
+        countryName <- map["country"]
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
