@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "container:ConferenceForAttendees.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:Submodules"
+      name = "Submodules">
+      <FileRef
+         location = "group:ObjectMapper/ObjectMapper.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>
