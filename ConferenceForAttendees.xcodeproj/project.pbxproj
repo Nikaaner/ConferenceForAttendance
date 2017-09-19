@@ -14,6 +14,7 @@
 		95CDFE411F71774B00F8BF36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CDFE3F1F71774B00F8BF36 /* LaunchScreen.storyboard */; };
 		95CDFE4A1F71786400F8BF36 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CDFE491F71786400F8BF36 /* ObjectMapper.framework */; };
 		95CDFE4F1F717AA200F8BF36 /* Attendees.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CDFE4E1F717AA200F8BF36 /* Attendees.json */; };
+		95CDFE541F717B3C00F8BF36 /* Attendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDFE531F717B3C00F8BF36 /* Attendee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		95CDFE421F71774B00F8BF36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95CDFE491F71786400F8BF36 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Submodules/ObjectMapper/build/Debug-iphoneos/ObjectMapper.framework"; sourceTree = "<group>"; };
 		95CDFE4E1F717AA200F8BF36 /* Attendees.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Attendees.json; sourceTree = "<group>"; };
+		95CDFE531F717B3C00F8BF36 /* Attendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				95CDFE361F71774B00F8BF36 /* AppDelegate.swift */,
-				95CDFE381F71774B00F8BF36 /* ViewController.swift */,
-				95CDFE3A1F71774B00F8BF36 /* Main.storyboard */,
+				95CDFE551F717CDC00F8BF36 /* Models */,
+				95CDFE521F717B2200F8BF36 /* View Controllers */,
+				95CDFE501F717AF900F8BF36 /* Storyboards */,
 				95CDFE4D1F717A8200F8BF36 /* Resources */,
-				95CDFE3F1F71774B00F8BF36 /* LaunchScreen.storyboard */,
-				95CDFE421F71774B00F8BF36 /* Info.plist */,
+				95CDFE511F717B1B00F8BF36 /* Supporting Files */,
 			);
 			path = ConferenceForAttendees;
 			sourceTree = "<group>";
@@ -85,6 +87,39 @@
 				95CDFE4E1F717AA200F8BF36 /* Attendees.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		95CDFE501F717AF900F8BF36 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				95CDFE3F1F71774B00F8BF36 /* LaunchScreen.storyboard */,
+				95CDFE3A1F71774B00F8BF36 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		95CDFE511F717B1B00F8BF36 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95CDFE421F71774B00F8BF36 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95CDFE521F717B2200F8BF36 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95CDFE381F71774B00F8BF36 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		95CDFE551F717CDC00F8BF36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95CDFE531F717B3C00F8BF36 /* Attendee.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CDFE541F717B3C00F8BF36 /* Attendee.swift in Sources */,
 				95CDFE391F71774B00F8BF36 /* ViewController.swift in Sources */,
 				95CDFE371F71774B00F8BF36 /* AppDelegate.swift in Sources */,
 			);
