@@ -66,26 +66,31 @@ struct Attendee: Mappable {
 
 extension Attendee {
     
-    static func attendees(completion: @escaping AttendeesCompletion) {
+    static func allAttendees() -> [Attendee]? {
         var attendees: [Attendee]?
-        
-        defer {
-            completion(attendees)
-        }
-        
+
         do {
             guard let fileURL = Bundle.main.url(forResource: "Attendees", withExtension: "json") else {
                 print("No file")
-                return
+                return attendees
             }
             
             let data = try Data(contentsOf: fileURL)
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             attendees = Mapper<Attendee>().mapArray(JSONObject: json)
-            
+            return attendees
+
         } catch {
             print(error.localizedDescription)
+            return attendees
         }
+    }
+    
+    static func attendeesWithSuitableDate() -> [Attendee]? {
+        return allAttendees()?.filter({ (attendee) -> Bool in
+            guard let suitableDates = attendee.suitableDates else { return false }
+            return suitableDates.count > 0
+        })
     }
     
 }

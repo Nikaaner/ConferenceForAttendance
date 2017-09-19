@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        Attendee.attendees { (attendees) in
-            attendees?.forEach {
-                print("\($0.firstName) \($0.lastName) \($0.suitableDates)")
-            }
+        
+        if let attendees = Attendee.allAttendees(), let conferences = Conference.conferences(from: attendees) {
+            let serializedConferences = Mapper().toJSONString(conferences)
+            print(serializedConferences)
         }
         
         return true

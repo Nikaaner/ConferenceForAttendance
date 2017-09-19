@@ -15,6 +15,8 @@
 		95CDFE4A1F71786400F8BF36 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CDFE491F71786400F8BF36 /* ObjectMapper.framework */; };
 		95CDFE4F1F717AA200F8BF36 /* Attendees.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CDFE4E1F717AA200F8BF36 /* Attendees.json */; };
 		95CDFE541F717B3C00F8BF36 /* Attendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDFE531F717B3C00F8BF36 /* Attendee.swift */; };
+		95CDFE5C1F719A1E00F8BF36 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDFE5B1F719A1E00F8BF36 /* Country.swift */; };
+		95CDFE5E1F71A35A00F8BF36 /* Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDFE5D1F71A35A00F8BF36 /* Conference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		95CDFE491F71786400F8BF36 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Submodules/ObjectMapper/build/Debug-iphoneos/ObjectMapper.framework"; sourceTree = "<group>"; };
 		95CDFE4E1F717AA200F8BF36 /* Attendees.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Attendees.json; sourceTree = "<group>"; };
 		95CDFE531F717B3C00F8BF36 /* Attendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
+		95CDFE5B1F719A1E00F8BF36 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		95CDFE5D1F71A35A00F8BF36 /* Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				95CDFE531F717B3C00F8BF36 /* Attendee.swift */,
+				95CDFE5B1F719A1E00F8BF36 /* Country.swift */,
+				95CDFE5D1F71A35A00F8BF36 /* Conference.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -196,7 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CDFE5C1F719A1E00F8BF36 /* Country.swift in Sources */,
 				95CDFE541F717B3C00F8BF36 /* Attendee.swift in Sources */,
+				95CDFE5E1F71A35A00F8BF36 /* Conference.swift in Sources */,
 				95CDFE391F71774B00F8BF36 /* ViewController.swift in Sources */,
 				95CDFE371F71774B00F8BF36 /* AppDelegate.swift in Sources */,
 			);
