@@ -39,6 +39,7 @@ struct Conference: Mappable {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         startingDate <- (map["startingDate"], DateFormatterTransform(dateFormatter: dateFormatter))
         
         emails <- map["emails"]
@@ -81,7 +82,7 @@ extension Conference {
         
         let theBestDate = datesPopularity.sorted { (first, second) -> Bool in
             if first.value.count == second.value.count {
-                return first.key > second.key
+                return first.key < second.key
             }
             
             return first.value.count > second.value.count
